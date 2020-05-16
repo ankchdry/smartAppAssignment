@@ -44,8 +44,8 @@ class ScrollableContentView: UIView {
         NSLayoutConstraint.activate([leadingAnchor, trailingAnchor, bottomAnchor, heightAnchor])
         
         contentView = ContentView.init()
+        contentView.backgroundColor = UIColor.backgroundColor
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = UIColor.white
         scrollView.addSubview(contentView)
         
         NSLayoutConstraint.activate([
@@ -69,7 +69,7 @@ class ContentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         // Impelemented via frame.
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.backgroundColor
         self.layoutComponents()
     }
     
@@ -81,6 +81,7 @@ class ContentView: UIView {
     func layoutComponents() {
         titleLabel = UILabel.init()
         titleLabel.font = Font.bold(size: 14.0, font: .SharpSans).fetch()
+        titleLabel.textColor = UIColor.textColor
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(titleLabel)
         
@@ -92,6 +93,7 @@ class ContentView: UIView {
         
         dateLabel = UILabel.init()
         dateLabel.font = Font.medium(size: 14.0, font: .SharpSans).fetch()
+        dateLabel.textColor = UIColor.textColor
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(dateLabel)
         NSLayoutConstraint.activate([
@@ -102,6 +104,7 @@ class ContentView: UIView {
         
         ratingLabel = UILabel.init()
         ratingLabel.font = Font.medium(size: 14.0, font: .SharpSans).fetch()
+        ratingLabel.textColor = UIColor.textColor
         ratingLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(ratingLabel)
         NSLayoutConstraint.activate([
@@ -112,6 +115,7 @@ class ContentView: UIView {
         
         durationLabel = UILabel.init()
         durationLabel.font = Font.medium(size: 14.0, font: .SharpSans).fetch()
+        durationLabel.textColor = UIColor.textColor
         durationLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(durationLabel)
         NSLayoutConstraint.activate([
@@ -123,6 +127,7 @@ class ContentView: UIView {
         overviewLabel = UILabel.init()
         overviewLabel.font = Font.medium(size: 14.0, font: .SharpSans).fetch()
         overviewLabel.numberOfLines = 0
+        overviewLabel.textColor = UIColor.textColor
         overviewLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(overviewLabel)
         

@@ -72,7 +72,7 @@ class AppTabBarViewController: UITabBarController, BindableType {
     func configureTabBar() {
         // Changes tabbar appearence from here only.
         tabBar.tintColor = UIColor.clear
-        tabBar.barTintColor = UIColor.white
+        tabBar.barTintColor = UIColor.backgroundColor
         tabBar.isTranslucent = false
         
         tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -91,10 +91,10 @@ class AppTabBarViewController: UITabBarController, BindableType {
     func bindNavDetails(navController: UINavigationController, details: TabItemDetails) {
         navController.tabBarItem.title = details.title
         navController.tabBarItem.tag = details.tag
-        navController.tabBarItem.selectedImage = details.selectedImage.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        navController.tabBarItem.image = details.unselectedImage.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        navController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font : Font.book(size: 10, font: FontName.SharpSans).fetch(), NSAttributedString.Key.foregroundColor : UIColor.systemPink], for: UIControl.State.normal)
-        navController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font : Font.book(size: 10, font: FontName.SharpSans).fetch(), NSAttributedString.Key.foregroundColor : UIColor.systemPink], for: UIControl.State.selected)
+        navController.tabBarItem.selectedImage = details.selectedImage.withRenderingMode(.alwaysOriginal)
+        navController.tabBarItem.image = details.unselectedImage
+        navController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font : Font.book(size: 10, font: FontName.SharpSans).fetch(), NSAttributedString.Key.foregroundColor : UIColor.textColor], for: UIControl.State.normal)
+        navController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font : Font.book(size: 10, font: FontName.SharpSans).fetch(), NSAttributedString.Key.foregroundColor : UIColor.textColor], for: UIControl.State.selected)
         navController.tabBarItem.badgeColor = details.badgeColor
         navController.tabBarItem.titlePositionAdjustment = details.titlePositionAdjustment
         navController.tabBarItem.imageInsets = details.imageInsets
